@@ -1,0 +1,196 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    height: -webkit-fill-available;
+  }
+  
+  body {
+    font-family: Arial;
+    color: #111111;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: -webkit-fill-available;
+  }
+  
+  .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #c0c0c0;
+  }
+  
+  .navigation li {
+    float: right;
+  }
+  
+  .navigation li a {
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 20px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  a:link,
+  a:visited {
+    color: #fff;
+  }
+  
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% auto;
+    font-size: 32px;
+  }
+  
+  h2 {
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 20px;
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .logo {
+    width: 12%;
+    height: 12%;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    top: 50px;
+    margin: 0.5em;
+  }
+  .chat-container {
+    width: 350px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  #textpicture-container {
+    display: inline-block;
+  }
+  
+  .rent {
+    width: 350px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  #textcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  #textcenter p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  #messages {
+    height: 300px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+    background-color: #fafafa;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .rent {
+    flex-basis: 20%;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .room {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .roomplan {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+  }
+  
+  input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+  }
+  
+  footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #c0c0c0;
+    text-align: center;
+    padding: 10px 0;
+    min-height: 20vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  
+  .fixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #c0c0c0;
+    text-align: center;
+    padding: 10px 0;
+  }
