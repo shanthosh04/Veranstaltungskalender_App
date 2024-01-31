@@ -4,11 +4,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="scripts/global.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
     <script src="scripts/register.js"></script>
-    <link rel="icon" href="picture/logo.svg" type="image/icon type" />
-    <title>Modul 245</title>
+    <link rel="icon" href="picture/logo.png" type="image/icon type" />
+    <title>Verantstaltungsklander</title>
   </head>
 
   <body>
@@ -16,12 +15,10 @@
       <div class="navigation">
         <ul class="nav_s">
           <a href="Index.html">
-            <img class="logo" src="picture/logo.svg" alt=" logo" />
+            <img class="logo" src="img/logo.png" alt=" logo" />
           </a>
-          <li><a href="register.html">Registrieren</a></li>
-          <li><a href="index.html">Login</a></li>
-          <li><a href="rentgarage.html">Garage mieten</a></li>
-          <li><a href="rentroom.html">Raum mieten</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="index.html">Verantstaltungen</a></li>
         </ul>
       </div>
     </nav>
@@ -49,17 +46,15 @@
       <p>Street</p>
       <input
         type="text"
-        id="streetInput"
+        id="housenumber"
         placeholder="Please enter your street"
       />
-      <p>streetnr</p>
-      <input
-        type="number"
-        id="streetnrInput"
-        placeholder="Please enter your streetnr"
-      />
       <p>Zip</p>
-      <input type="text" id="zipInput" placeholder="Please enter your zip" />
+      <input 
+        type="number" 
+        id="zipInput" 
+        placeholder="Please enter your zip" 
+        />
       <p>Phone</p>
       <input
         type="text"
@@ -78,24 +73,11 @@
         id="passwordInput"
         placeholder="Please enter your password"
       />
-      <div id="err"></div>
       <button id="send">Send</button>
     </div>
 
     <br />
     <br />
 
-    <footer>
-      <table>
-        <tr>
-          <td>
-            <p>CsBe</p>
-            <p>Zieglerstrasse 64</p>
-            <p>3000, 14 Bern</p>
-            <p>csbe@gmail.com</p>
-          </td>
-        </tr>
-      </table>
-    </footer>
   </body>
 </html>
