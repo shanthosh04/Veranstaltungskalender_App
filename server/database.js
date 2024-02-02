@@ -1,7 +1,8 @@
 let pool = null;
 
+const mysql = require('mysql2/promise');
+
 const initializeMySQL = () => {
-  const mysql = require('mysql2/promise');
   pool = mysql.createPool({
     database: process.env.DB_NAME || 'mychat',
     host: process.env.DB_HOST || 'localhost',
@@ -39,8 +40,7 @@ const initializeDBSchema = async () => {
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
-  );
-  `;
+  );`;
   await executeSQL(userTableQuery);
   
   const messageTableQuery = `CREATE TABLE IF NOT EXISTS messages (

@@ -6,8 +6,8 @@ const initializeAPI = (app) => {
 };
 
 const register = async (req, res) => {
-  const { firstname, lastname, birthdate, street, zip, city, email, password } = req.body;
-  const query = `INSERT INTO users (firstname, lastname, birthdate, street, zipcode, city, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+  const { firstname, lastname, birthdate, street, zipcode, city, email, password } = req.body;
+  const query = `INSERT INTO users (firstname, lastname, birthdate, street, zipcode, city, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?);`;
   try {
     const result = await executeSQL(query, [firstname, lastname, birthdate, street, zipcode, city, email, password]);
     if (result.affectedRows === 1) {

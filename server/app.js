@@ -1,7 +1,7 @@
 const express = require("express");
 const http = require("http");
 const { initializeAPI } = require("./api");
-const { initializeMySQL } = require("./database");
+const { initializeMySQL, initializeDBSchema } = require("./database"); 
 
 // Create the express server
 const app = express();
@@ -21,6 +21,7 @@ initializeAPI(app);
 
 // Initialize the database
 initializeMySQL();
+initializeDBSchema();
 
 //start the web server
 const serverPort = process.env.PORT || 3000;
