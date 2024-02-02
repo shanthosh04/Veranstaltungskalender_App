@@ -1,3 +1,4 @@
+// login.js
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
     const errorText = document.getElementById("error");
@@ -19,8 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!response.ok) throw new Error('Fehler beim Senden der Anfrage');
 
-            const result = await response.json();
-            if (result) {
+            const { token } = await response.json();
+            if (token) {
+                localStorage.setItem('token', token);
                 window.location.href = "./index.html";
             } else {
                 errorText.innerText = "Login fehlgeschlagen!";
