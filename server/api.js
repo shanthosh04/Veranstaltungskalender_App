@@ -22,7 +22,7 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   const { email, password } = req.body;
-  const query = `SELECT * FROM users WHERE email = '${email}' AND password = '${password}'`;
+  const query = `SELECT * FROM users WHERE email = ? AND password = ?`;
   try {
     const user = await executeSQL(query, [email, password]);
     if (user.length === 1) {

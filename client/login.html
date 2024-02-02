@@ -26,20 +26,24 @@
 
     <div class="chat-container">
       <form id="loginForm">
-      <p>E-Mail</p>
-      <input
-        type="email" 
-        id="email" 
-        placeholder="Please enter your email" 
-      />
-      <p>Password</p>
-      <input
-        type="password"
-        id="password"
-        placeholder="Please enter your password"
-      />
-      </form>
-      <button id="send">Send</button>
+        <p>E-Mail</p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Bitte geben Sie Ihre E-Mail ein"
+          required
+        />
+        <p>Passwort</p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Bitte geben Sie Ihr Passwort ein"
+          required
+        />
+        <button type="submit" id="send">Senden</button>
+      </form>      
       <div id="error"></div>
     </div>
 
