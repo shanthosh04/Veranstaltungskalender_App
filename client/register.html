@@ -1,83 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="de">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="style/style.css" />
-    <script src="scripts/register.js"></script>
+    <script src="./scripts/register.js"></script>
     <link rel="icon" href="picture/logo.png" type="image/icon type" />
-    <title>Verantstaltungsklander</title>
-  </head>
-
-  <body>
+    <title>event</title>
+</head>
+<body>
     <nav>
-      <div class="navigation">
-        <ul class="nav_s">
-          <a href="Index.html">
-            <img class="logo" src="img/logo.png" alt=" logo" />
-          </a>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="index.html">Verantstaltungen</a></li>
-        </ul>
-      </div>
+        <div class="navigation">
+          <ul class="nav_s">
+            <a href="index.html">
+              <img class="logo" src="img/logo.png" alt="logo" />
+            </a>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="index.html">Veranstaltungen</a></li>
+          </ul>
+        </div>
     </nav>
     <h1>Registrieren</h1>
 
     <div class="chat-container">
-      <p>Firstname</p>
-      <input
-        type="text"
-        id="firstnameInput"
-        placeholder="Please enter your firstname"
-      />
-      <p>Lastname</p>
-      <input
-        type="text"
-        id="lastnameInput"
-        placeholder="Please enter your lastname"
-      />
-      <p>Birthdate</p>
-      <input
-        type="date"
-        id="birthdateInput"
-        placeholder="Please enter your birthdate"
-      />
-      <p>Street</p>
-      <input
-        type="text"
-        id="housenumber"
-        placeholder="Please enter your street"
-      />
-      <p>Zip</p>
-      <input 
-        type="number" 
-        id="zipInput" 
-        placeholder="Please enter your zip" 
-        />
-      <p>Phone</p>
-      <input
-        type="text"
-        id="phoneInput"
-        placeholder="Please enter your phone"
-      />
-      <p>E-Mail</p>
-      <input
-        type="email"
-        id="emailInput"
-        placeholder="Please enter your email"
-      />
-      <p>Password</p>
-      <input
-        type="password"
-        id="passwordInput"
-        placeholder="Please enter your password"
-      />
-      <button id="send">Send</button>
+        <form id="registerForm">
+            <input type="text" id="firstname" name="firstname" placeholder="Vorname" required>
+            <input type="text" id="lastname" name="lastname" placeholder="Nachname" required>
+            <input type="date" id="birthdate" name="birthdate" placeholder="Geburtsdatum" required>
+            <input type="text" id="street" name="street" placeholder="Strasse" required>
+            <input type="text" id="zipcode" name="zipcode" placeholder="PLZ" required>
+            <input type="text" id="city" name="city" placeholder="Stadt" required>
+            <input type="email" id="email" name="email" placeholder="E-Mail" required>
+            <input type="password" id="password" name="password" placeholder="Passwort" required>
+            <button type="submit">Registrieren</button>
+        </form>
+        <div id="error"></div>
     </div>
-
-    <br />
-    <br />
-
-  </body>
+</body>
 </html>
