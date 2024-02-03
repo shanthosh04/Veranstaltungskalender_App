@@ -67,6 +67,14 @@ h1 {
   text-align: center;
 }
 
+.addbutton {
+  padding: 10px 20px;
+  font-size: 12px;
+  float: left;
+  width: 100px;
+  margin-left: 20px;
+}
+
 .chat-container {
   width: 350px;
   background-color: white;
@@ -96,6 +104,17 @@ button {
 }
 
 footer {
+  position: relative; 
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333333; 
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footerfix {
   position: fixed; 
   left: 0;
   bottom: 0;
