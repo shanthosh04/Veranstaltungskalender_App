@@ -1,13 +1,11 @@
 const jwt = require('jsonwebtoken');
 const { executeSQL } = require("./database");
 
-// Initialisierung der API-Endpunkte
 const initializeAPI = (app) => {
   app.post("/api/login", login);
   app.post("/api/register", register);
 };
 
-// Registrierungsfunktion
 const register = async (req, res) => {
   const { firstname, lastname, birthdate, street, zipcode, city, email, password } = req.body;
   const query = `INSERT INTO users (firstname, lastname, birthdate, street, zipcode, city, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?);`;
@@ -23,7 +21,6 @@ const register = async (req, res) => {
   }
 };
 
-// Login-Funktion
 const login = async (req, res) => {
   const { email, password } = req.body;
   const query = `SELECT * FROM users WHERE email = ? AND password = ?`;

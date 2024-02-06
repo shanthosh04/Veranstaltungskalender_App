@@ -67,20 +67,22 @@ h1 {
   text-align: center;
 }
 
-.addbutton {
-  padding: 10px 20px;
-  font-size: 12px;
-  float: left;
-  width: 100px;
-  margin-left: 20px;
-}
-
 .chat-container {
   width: 350px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-right: auto;
   margin-left: auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.event-container {
+  width: 275px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  float: left;
   padding: 20px;
   border-radius: 8px;
 }

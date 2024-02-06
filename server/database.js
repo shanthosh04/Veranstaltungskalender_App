@@ -43,10 +43,12 @@ const initializeDBSchema = async () => {
   );`;
   await executeSQL(userTableQuery);
   
-  const messageTableQuery = `CREATE TABLE IF NOT EXISTS messages (
+  const messageTableQuery = `CREATE TABLE IF NOT EXISTS events (
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
-    message VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    details TEXT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
   );`;
