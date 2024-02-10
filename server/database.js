@@ -43,16 +43,16 @@ const initializeDBSchema = async () => {
   );`;
   await executeSQL(userTableQuery);
   
-  const messageTableQuery = `CREATE TABLE IF NOT EXISTS events (
+  const eventTableQuery = `CREATE TABLE IF NOT EXISTS events (
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     title VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
     description TEXT NOT NULL,
-    details TEXT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
   );`;
-  await executeSQL(messageTableQuery);
+  await executeSQL(eventTableQuery);
 };
 
 module.exports = { executeSQL, initializeMySQL, initializeDBSchema };

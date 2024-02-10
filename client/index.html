@@ -1,71 +1,34 @@
 <!DOCTYPE html>
-
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="style/style.css" />
-    <script src="scripts/index.js"></script>
-    <link rel="icon" href="img/logo.svg" type="image/icon type" />
-    <title>event</title>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="scripts/index.js"></script>
+  <link rel="icon" href="img/logo.svg" type="image/icon type" />
+  <title>event</title>
+</head>
+<body>
+  <nav>
+    <div class="navigation">
+      <ul class="nav_s">
+        <a href="index.html">
+          <img class="logo" src="img/logo.png" alt=" logo" />
+        </a>
+        <li><a href="register.html">Registrieren</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="index.html">Event</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <body>
-    <nav>
-      <div class="navigation">
-        <ul class="nav_s">
-          <a href="index.html">
-            <img class="logo" src="img/logo.png" alt=" logo" />
-          </a>
-          <li><a href="register.html">Registrieren</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="index.html">Event</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <br>
-    <br>
-
-    <h1>Event</h1>
-
+    <h1>Event Kalender</h1>
     <div class="event-container">
     <form id="eventForm">
-      <!-- Event Title -->
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required>
-
-      <!-- Event Description -->
-      <label for="description">Description:</label>
-      <input type="text" id="description" name="description" required>
-
-      <!-- Event Details -->
-      <label for="details">Details:</label>
-      <input type="text" id="details" name="details" required>
-
-      <!-- Submit Button -->
-      <button type="submit" id="submit">Add Event</button>
-  </form>
-    <div id="error"></div>
-  </div>
-
-  <div id="eventsList">
-    <!-- Container zum Anzeigen der Events -->
-  </div>
-
-    <div class="footerfix">
-    <footer>
-      <table>
-        <tr>
-          <td>
-            <p>Copyright  &copy; 2024 | Designed by Shanthosh</span></p>
-          </td>
-        </tr>
-      </table>
-    </footer>
-  </div>
-
-  </body>
-</html>
-
-
+      <input type="text" id="title" placeholder="Event Name" required>
+      <input type="date" id="Date" required>
+      <textarea id="Description" placeholder="Beschreibung" required></textarea>
+      <button type="submit">Event hinzufügen</button>
+  </form>  
+</div>
+    <div id="eventsContainer"></div>
