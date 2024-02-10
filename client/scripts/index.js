@@ -75,7 +75,7 @@ function createEventElement(event) {
     titleEl.textContent = event.title;
     const dateEl = document.createElement('em');
     const date = new Date(event.date).toISOString().split('T')[0];
-    dateEl.textContent = date
+    dateEl.textContent = date;
     const descEl = document.createElement('p');
     descEl.textContent = event.description;
     descEl.style.display = 'none';
@@ -85,6 +85,9 @@ function createEventElement(event) {
     toggleDescButton.addEventListener('click', function() {
         descEl.style.display = descEl.style.display === 'none' ? 'block' : 'none';
     });
+
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.classList.add('buttons-container');
 
     const editButton = document.createElement('button');
     editButton.textContent = 'Bearbeiten';
@@ -98,14 +101,16 @@ function createEventElement(event) {
         deleteEvent(event.id);
     });
 
+    buttonsContainer.appendChild(editButton);
+    buttonsContainer.appendChild(deleteButton);
+
     eventElement.appendChild(titleEl);
     eventElement.appendChild(document.createTextNode(' ('));
     eventElement.appendChild(dateEl);
     eventElement.appendChild(document.createTextNode(') '));
-    eventElement.appendChild(toggleDescButton); 
+    eventElement.appendChild(toggleDescButton);
     eventElement.appendChild(descEl);
-    eventElement.appendChild(editButton);
-    eventElement.appendChild(deleteButton);
+    eventElement.appendChild(buttonsContainer);
 
     return eventElement;
 }

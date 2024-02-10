@@ -77,7 +77,7 @@ h1 {
   border-radius: 8px;
 }
 
-.event-container {
+.event {
   width: 275px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -144,6 +144,21 @@ footer p {
   padding: 20px;
   border-radius: 8px;
 }
+
+.event-entry .buttons-container button {
+  margin-top: 10px;
+  margin-right: 10px; 
+}
+
+.event-entry .buttons-container button:last-child {
+  margin-right: 0;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; }

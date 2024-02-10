@@ -4,7 +4,7 @@ const { executeSQL } = require("./database");
 const initializeAPI = (app) => {
   app.post("/api/login", login);
   app.post("/api/register", register);
-  app.get("/api/event", authenticateToken, getEvents);
+  app.get("/api/event", getEvents);
   app.post("/api/event", authenticateToken, createEvent);
   app.put("/api/event/:eventId", authenticateToken, editEvent);
   app.delete("/api/event/:eventId", authenticateToken, deleteEvent);
@@ -98,15 +98,15 @@ const deleteEvent = async (req, res) => {
 };
 
 const getEvents = async (req, res) => {
-  const userId = req.user.userId;
-  const query = `SELECT * FROM events WHERE user_id = ?`;
+  const query = `SELECT * FROM events`; 
   try {
-    const events = await executeSQL(query, [userId]);
+    const events = await executeSQL(query);
     res.json(events);
   } catch (error) {
     res.status(500).json({ error: "Serverfehler beim Abrufen von Veranstaltungen" });
   }
 };
+
 
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
