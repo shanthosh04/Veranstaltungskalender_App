@@ -18,7 +18,7 @@ describe('API Tests', () => {
   });
 
   beforeEach(() => {
-    jest.clearAllMocks(); // Stellt sicher, dass Mocks zwischen Tests zurückgesetzt werden
+    jest.clearAllMocks();
   });
 
   describe('POST /api/register', () => {
@@ -91,5 +91,86 @@ describe('API Tests', () => {
     });
 
   });
+  describe('POST /api/event', () => {
+    it('should create an event successfully', async () => {
+      jwt.verify.mockImplementation((token, secret, callback) => {
+        callback(null, { userId: 1 });
+      });
+  
+      executeSQL.mockResolvedValue({ affectedRows: 1 });
+  
+      const newEvent = {
+        title: 'school',
+        date: '2024-02-11',
+        description: 'schoolstart',
+      };
+  
+      const response = await request(app)
+        .post('/api/event')
+        .set('Authorization', 'Bearer fake.jwt.token')
+        .send(newEvent);
+  
+      expect(response.statusCode).toBe(200);
+      expect(response.body).toEqual({ success: true });
+      expect(executeSQL).toHaveBeenCalledWith(expect.any(String), [
+        expect.any(Number),
+        newEvent.title,
+        newEvent.date,
+        newEvent.description,
+      ]);
+    });
+  });
 
+  describe('PUT /api/event/:eventId', () => {
+    it('should update an event successfully', async () => {
+      jwt.verify.mockImplementation((token, secret, callback) => {
+        callback(null, { userId: 1 });
+      });
+  
+      executeSQL.mockResolvedValue({ affectedRows: 1 });
+  
+      const updatedEvent = {
+        title: 'schule',
+        date: '2024-02-12',
+        description: '2. Semester start',
+      };
+  
+      const response = await request(app)
+        .put('/api/event/1') 
+        .set('Authorization', 'Bearer fake.jwt.token')
+        .send(updatedEvent);
+  
+      expect(response.statusCode).toBe(200);
+      expect(response.body).toEqual({ success: true });
+      expect(executeSQL).toHaveBeenCalledWith(expect.any(String), [
+        updatedEvent.title,
+        updatedEvent.date,
+        updatedEvent.description,
+        '1',
+        expect.any(Number),
+      ]);
+    });
+  });
+  
+  describe('DELETE /api/event/:eventId', () => {
+    it('should delete an event successfully', async () => {
+      jwt.verify.mockImplementation((token, secret, callback) => {
+        callback(null, { userId: 1 });
+      });
+  
+      executeSQL.mockResolvedValue({ affectedRows: 1 });
+  
+      const response = await request(app)
+        .delete('/api/event/1')
+        .set('Authorization', 'Bearer fake.jwt.token');
+  
+      expect(response.statusCode).toBe(200);
+      expect(response.body).toEqual({ success: true });
+      expect(executeSQL).toHaveBeenCalledWith(expect.any(String), [
+        '1',
+        expect.any(Number),
+      ]);
+    });
+  });  
+  
 });
