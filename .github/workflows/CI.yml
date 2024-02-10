@@ -7,21 +7,18 @@ on:
       - synchronize
 
 jobs:
-  docker:
-    runs-on: [self-hosted]
-
+  build:
+    runs-on: self-hosted
     steps:
-      - 
-        name: Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
+        
+      - name: Lint with ESLint
+        run: npx eslint .
 
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+      - name: Format with Prettier
+        run: npx prettier --write .
 
-      - 
-        name: Build 
-        uses: docker/build-push-action@v5
-        with:
-          push: false
-          tags: shanthosh04/event:latest
+      - name: Test with Jest
+        run: npx jest
+      
