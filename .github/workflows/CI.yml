@@ -5,16 +5,27 @@ on:
     types:
       - opened
       - synchronize
+
 jobs:
-  docker:
-    runs-on: [self-hosted]
+  build:
+    runs-on: self-hosted
     steps:
-      -
-        name: Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
-      -      
-        name: Build 
-        uses: docker/build-push-action@v5
+  
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          push: false
-          tags: shanthosh04/event:latest
+          node-version: '20'
+  
+      - name: Install Dependencies
+        run: npm install
+  
+      - name: Linting
+        run: npm run lint
+  
+      - name: Testing
+        run: npm run test
+  
+      - name: Building
+        run: npm run build
