@@ -6,7 +6,7 @@ describe('Event Operations', () => {
 
 describe("User Registration", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:3000/register");
+        cy.visit("http://localhost:3000/register.html");
     });
 
     it('allows a user to register', () => {
@@ -26,7 +26,7 @@ describe("User Registration", () => {
 
 describe('Login Operations', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:3000/login');
+        cy.visit('http://localhost:3000/login.html');
     });
 
     it('allows a user to login', () => {
